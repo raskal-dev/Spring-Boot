@@ -55,7 +55,7 @@ public class CommandeServiceImpl implements CommandeService {
     }
 
     @Override
-    public Collection<Commande> getAll() {
+    public Collection<Commande> getAllCommande() {
         LOGGER.info("LISTE RÉCUPÉRÉ...");
         return commandeRepository.findAll();
     }

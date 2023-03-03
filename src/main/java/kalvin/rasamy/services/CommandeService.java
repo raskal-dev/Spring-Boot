@@ -16,7 +16,7 @@ public interface CommandeService {
 
     Commande deleteCommande(long idCom);
 
-    Collection<Commande> getAll();
+    Collection<Commande> getAllCommande();
 
     Collection<Commande> findByNomCli(String nomCli);
 }
