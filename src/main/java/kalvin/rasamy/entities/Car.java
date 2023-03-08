@@ -25,6 +25,8 @@ public class Car {
 
     double price;
 
+    boolean vendu;
+
 
 
 }

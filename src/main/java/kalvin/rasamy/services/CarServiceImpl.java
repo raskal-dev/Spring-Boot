@@ -62,6 +62,12 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
+    public Collection<Car> getCarsByVendu() {
+        LOGGER.info("LISTE DES VOITURE NON VENDU RÉCUPÉRÉE ....");
+        return carRepository.findCarsByVendu(false);
+    }
+
+    @Override
     public Collection<Car> findByMark(String mark) {
         LOGGER.info("VOITURE RÉCUPÉRÉE AVEC UNE MARQUE PRÉCISE ... ");
         return carRepository.findAllByMarkIsContainingIgnoreCase(mark);

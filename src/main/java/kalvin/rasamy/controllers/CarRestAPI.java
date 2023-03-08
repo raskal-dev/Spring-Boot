@@ -25,6 +25,12 @@ public class CarRestAPI {
         return ResponseEntity.ok(response);
     }
 
+    @GetMapping(path = "/vendu")
+    public ResponseEntity<MyResponse> getCarsByVendu() {
+        MyResponse response = MyResponse.builder().message("liste non vendu récupérée ... ").object(carService.getCarsByVendu()).build();
+        return ResponseEntity.ok(response);
+    }
+
     @PostMapping(path = "/save")
     public ResponseEntity<MyResponse> saveData(@RequestBody Car car) {
         return ResponseEntity.ok(MyResponse.builder().message("ENREGISTRÉE TSARA MIHINTSY ... ").object(carService.saveCar(car)).build());

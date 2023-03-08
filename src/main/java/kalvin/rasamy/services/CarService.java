@@ -18,6 +18,8 @@ public interface CarService {
 
     Collection<Car> getAllCars();
 
+    Collection<Car> getCarsByVendu();
+
     Collection<Car> findByMark(String mark);
 
     String sendMail();

@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 @Entity
 @Getter
 @Setter
@@ -27,4 +30,14 @@ public class Commande {
     int nbPlaceVoiture;
 
     double priceVoiture;
+
+
+    @Column(name = "data_commande")
+    @Temporal(TemporalType.TIMESTAMP)
+    Timestamp dataCommande;
+
+    @PrePersist
+    protected void setDateCommande() {
+        dataCommande = Timestamp.valueOf(LocalDateTime.now());
+    }
 }

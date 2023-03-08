@@ -10,6 +10,8 @@ public interface CarRepository extends JpaRepository<Car, Long> {
 
     Car findCarByMarkIgnoreCase(String mark);
 
+    Collection<Car> findCarsByVendu(boolean vendu);
+
     Collection<Car> findAllByMarkIsContainingIgnoreCase(String mark);
 
 }
